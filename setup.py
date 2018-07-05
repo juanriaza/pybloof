@@ -2,7 +2,7 @@ from setuptools import setup
 from setuptools.extension import Extension
 try:
      from Cython.distutils import build_ext
-except ImportError:
+except ModuleNotFoundError:
     from pip import pip
 
     pip.main(['install', 'cython'])
