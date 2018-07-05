@@ -1,6 +1,9 @@
 from setuptools import setup
 from setuptools.extension import Extension
-from Cython.Distutils import build_ext
+try:
+     from Cython.distutils import build_ext
+except ImportError:
+     from distutils.command import build_ext
 from os.path import join
 import functools
 
