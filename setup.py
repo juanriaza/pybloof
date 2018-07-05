@@ -3,7 +3,11 @@ from setuptools.extension import Extension
 try:
      from Cython.distutils import build_ext
 except ImportError:
-     from distutils.command import build_ext
+    from pip import pip
+
+    pip.main(['install', 'cython'])
+
+    from Cython.distutils import build_ext
 from os.path import join
 import functools
 
